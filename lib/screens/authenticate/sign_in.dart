@@ -24,12 +24,12 @@ class _SignInState extends State<SignIn> {
       resizeToAvoidBottomPadding: false,
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.deepOrangeAccent,
+        backgroundColor: Colors.deepOrange,
         elevation: 0.0,
         title: Text("Jagrati"),
       ),
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 130.0),
+        padding: EdgeInsets.fromLTRB(30, 120, 30, 0),
         child: Column(
           children: <Widget>[
             Text(
@@ -55,10 +55,32 @@ class _SignInState extends State<SignIn> {
               ),
             ),
             SizedBox(height: 20,),
+            Text('forgot your password ?'),
+            SizedBox(height: 20,),
             RaisedButton(
+              onPressed: (){
+                print("something");
+                Navigator.popAndPushNamed(context, '/');
+              },
+              color: Colors.deepOrangeAccent,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18.0),
+                  side: BorderSide(color: Colors.orange)
+              ),
               child: new Text('SIGN IN'),
-
             ),
+            SizedBox(height: 80,),
+            Text('Dont have a account'),
+            SizedBox(height: 20,),
+            RaisedButton(
+              onPressed: () => print("sign up"),
+              color: Colors.deepOrangeAccent,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18.0),
+                  side: BorderSide(color: Colors.orange),
+              ),
+              child: new Text("SIGN UP"),
+            )
           ],
         ),
       ),
